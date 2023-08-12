@@ -36,79 +36,78 @@ const DisplayApprovedBooking = ({
     fetchRequiredRoom(roomId);
   }, [_id]);
 
-  if(count >= 1){
-  return (
-    <>
-      <RoomWrapper>
-        <div className="room-box">
-          <div className="image-wrapper">
-            <img
-              src={`http://localhost:4000/images/${requiredRoom.image}`}
-              alt={name}
-            />
-          </div>
-          <div className="info-wrapper">
-            <div className="room-name">{name}</div>
-            <div className="room-dates">
-              <div className="arrival">
-                <span className="label">Arrival:</span>
-                <span className="value">
-                  {arrivalDate.slice(0, 10) + " " + arrivalTime}
-                </span>
-              </div>
-              <div className="departure">
-                <span className="label">Departure:</span>
-                <span className="value">
-                  {departureDate.slice(0, 10) + " " + departureTime}
-                </span>
+  if (count >= 1) {
+    return (
+      <>
+        <RoomWrapper>
+          <div className="room-box">
+            <div className="image-wrapper">
+              <img
+                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                alt={requiredRoom.roomNo}
+              />
+            </div>
+            <div className="info-wrapper">
+              <div className="room-name">{requiredRoom.roomNo}</div>
+              <div className="room-dates">
+                <div className="arrival">
+                  <span className="label">Arrival:</span>
+                  <span className="value">
+                    {arrivalDate.slice(0, 10) + " " + arrivalTime}
+                  </span>
+                </div>
+                <div className="departure">
+                  <span className="label">Departure:</span>
+                  <span className="value">
+                    {departureDate.slice(0, 10) + " " + departureTime}
+                  </span>
+                </div>
               </div>
             </div>
+            <div className="interactions">
+              <Link className="details-btn" to={`/approvedbookings/${_id}`}>
+                Details
+              </Link>
+              {/* Add booking button */}
+            </div>
           </div>
-          <div className="interactions">
-            <Link className="details-btn" to={`/approvedbookings/${_id}`}>
-              Details
-            </Link>
-            {/* Add booking button */}
-          </div>
-        </div>
-      </RoomWrapper>
-    </>
-  )
-  }
-  else if(count === 1){
+        </RoomWrapper>
+      </>
+    );
+  } else if (count === 1) {
     <SingleApprovedWrapper>
-              <div className="room-box">
-          <div className="image-wrapper">
-            <img
-              src={`http://localhost:4000/images/${requiredRoom.image}`}
-              alt={name}
-            />
-          </div>
-          <div className="info-wrapper">
-            <div className="room-name">{name}</div>
-            <div className="room-dates">
-              <div className="arrival">
-                <span className="label">Arrival:</span>
-                <span className="value">
-                  {arrivalDate.slice(0, 10) + " " + arrivalTime}
-                </span>
-              </div>
-              <div className="departure">
-                <span className="label">Departure:</span>
-                <span className="value">
-                  {departureDate.slice(0, 10) + " " + departureTime}
-                </span>
-              </div>
+      <div className="room-box">
+        <div className="image-wrapper">
+          <img
+            src={`http://localhost:4000/images/${requiredRoom.image}`}
+            alt={requiredRoom.roomNo}
+          />
+        </div>
+        <div className="info-wrapper">
+          <div className="room-name">{requiredRoom.roomNo}</div>
+          <div className="room-dates">
+            <div className="arrival">
+              <span className="label">Arrival:</span>
+              <span className="value">
+                {arrivalDate.slice(0, 10) + " " + arrivalTime}
+              </span>
+            </div>
+            <div className="departure">
+              <span className="label">Departure:</span>
+              <span className="value">
+                {departureDate.slice(0, 10) + " " + departureTime}
+              </span>
             </div>
           </div>
-          <div className="interactions">
-            <Link className="details-btn" to={`/approvedbookings/${_id}`}>
-              Details
-            </Link>
-            {/* Add booking button */}
-          </div>
         </div>
-    </SingleApprovedWrapper>
+        <div className="interactions">
+          <Link className="details-btn" to={`/approvedbookings/${_id}`}>
+            Details
+          </Link>
+          {/* Add booking button */}
+        </div>
+      </div>
+    </SingleApprovedWrapper>;
   }
 };
 
@@ -126,7 +125,7 @@ const RoomWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media(max-width: 1192px){
+  @media (max-width: 1192px) {
     width: 40%;
   }
 
@@ -318,6 +317,6 @@ const SingleApprovedWrapper = styled.div`
     width: 100%;
     flex-direction: column;
   }
-`
+`;
 
 export default DisplayApprovedBooking;

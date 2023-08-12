@@ -50,11 +50,11 @@ const DisplayPendingBookingRooms = ({
           <div className="room-box">
             <img
               src={`http://localhost:4000/images/${requiredRoom.image}`}
-              alt={name}
+              alt={requiredRoom.roomNo}
               style={{ cursor: "pointer" }}
             />
             <div className="room-box-footer">
-              <p style={{ color: "green" }}>{name}</p>
+              <p style={{ color: "green" }}>{requiredRoom.roomNo}</p>
               <p style={{ marginLeft: "40px" }}>{contact} </p>
             </div>
             <div className="room-box-footer">

@@ -44,11 +44,11 @@ const DisplayUserPayments = ({
             <div className="image-wrapper">
               <img
                 src={`http://localhost:4000/images/${requiredRoom.image}`}
-                alt={name}
+                alt={requiredRoom.roomNo}
               />
             </div>
             <div className="info-wrapper">
-              <div className="room-name">{name}</div>
+              <div className="room-name">{requiredRoom.roomNo}</div>
               <div className="room-dates">
                 <div className="arrival">
                   <span className="label">Arrival:</span>
@@ -103,11 +103,11 @@ const DisplayUserPayments = ({
             <div className="image-wrapper">
               <img
                 src={`http://localhost:4000/images/${requiredRoom.image}`}
-                alt={name}
+                alt={requiredRoom.roomNo}
               />
             </div>
             <div className="info-wrapper">
-              <div className="room-name">{name}</div>
+              <div className="room-name">{requiredRoom.roomNo}</div>
               <div className="room-dates">
                 <div className="arrival">
                   <span className="label">Arrival:</span>
@@ -157,7 +157,7 @@ const DisplayUserPayments = ({
 };
 
 const RoomWrapper = styled.div`
- width: 25%;
+  width: 25%;
   margin: 6px;
   padding: 10px;
   border: 1px solid #e0e0e0;
@@ -170,7 +170,7 @@ const RoomWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media(max-width: 1192px){
+  @media (max-width: 1192px) {
     width: 40%;
   }
 

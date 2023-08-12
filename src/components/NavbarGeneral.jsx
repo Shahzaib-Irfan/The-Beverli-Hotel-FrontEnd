@@ -9,7 +9,8 @@ const NavbarGeneral = () => {
     <>
       {!isAuthenticated ? (
         <Navbar />
-      ) : user.email === "shahzaibirfan1012@gmail.com" ? (
+      ) : user.email === "shahzaibirfan1012@gmail.com" ||
+        user["email"] === "shahzaibtest@mail.com" ? (
         <AdminNavbar />
       ) : (
         <UserNavbar />

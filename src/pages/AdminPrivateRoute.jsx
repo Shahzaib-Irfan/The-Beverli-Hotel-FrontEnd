@@ -6,10 +6,13 @@ import { useAuthContext } from "../contexts/AuthContext";
 const AdminPrivateRoute = ({ children }) => {
   const { user } = useAuthContext();
   if (user) {
-    if (user.email !== "shahzaibirfan1012@gmail.com") {
-      return <Navigate to="/" />;
-    } else {
+    if (
+      user.email !== "shahzaibirfan1012@gmail.com" ||
+      user.email !== "shahzaibtest@mail.com"
+    ) {
       return children;
+    } else {
+      return <Navigate to="/" />;
     }
   } else {
     return <Navigate to="/" />;

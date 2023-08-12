@@ -27,7 +27,8 @@ const FeaturedRooms = () => {
           })}
         </div>
         {isAuthenticated ? (
-          user["email"] === "shahzaibirfan1012@gmail.com" ? (
+          user["email"] === "shahzaibirfan1012@gmail.com" ||
+          user["email"] === "shahzaibtest@mail.com" ? (
             <Link to="/managerooms" className="btn">
               Manage Rooms
             </Link>

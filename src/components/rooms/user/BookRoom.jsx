@@ -138,22 +138,25 @@ const BookRoom = () => {
   if (!rooms) {
     return <h2 className="section-title">no room to display</h2>;
   } else if (rooms.length !== 0) {
-    const { name, image, roomType, description, rate } = rooms[0];
-    console.log(name, image, roomType, description, rate);
+    const { roomNo, image, roomType, description, rate } = rooms[0];
+    console.log(roomNo, image, roomType, description, rate);
     return (
       <Wrapper>
         <section className="section room-section">
           <Link to="/viewrooms" className="btn btn-primary">
             Back
           </Link>
-          <h2 className="section-title">{name}</h2>
+          <h2 className="section-title">{roomNo}</h2>
           <div className="room">
-            <img src={`http://localhost:4000/images/${image}`} alt={name}></img>
+            <img
+              src={`http://localhost:4000/images/${image}`}
+              alt={roomNo}
+            ></img>
             <div className="content-section">
               <div className="room-info">
                 <p>
                   <span className="room-data">name :</span>
-                  {name}
+                  {roomNo}
                 </p>
                 <p>
                   <span className="room-data">category :</span>

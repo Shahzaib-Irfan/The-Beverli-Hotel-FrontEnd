@@ -23,7 +23,7 @@ const Room = ({ _id }) => {
 
   useEffect(() => {
     fetchRequiredRoom(_id);
-  }, []);
+  }, [_id]);
   return (
     <Wrapper>
       <div className="container">
@@ -32,7 +32,8 @@ const Room = ({ _id }) => {
           alt={requiredRoom.roomNo}
         />
         {user ? (
-          user["email"] === "shahzaibirfan1012@gmail.com" ? (
+          user["email"] === "shahzaibirfan1012@gmail.com" ||
+          user["email"] === "shahzaibtest@mail.com" ? (
             <Link to={`/managerooms/${_id}`} className="link">
               <FaSearch />
             </Link>
