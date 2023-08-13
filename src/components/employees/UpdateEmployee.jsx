@@ -15,7 +15,7 @@ const UpdateEmployee = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:4000/employees/getSingleEmployee?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/employees/getSingleEmployee?id=${id}`
       );
       const data = await response.json();
       setEmployees(data);
@@ -39,7 +39,7 @@ const UpdateEmployee = () => {
           </article>
           <article className="form-article">
             <form
-              action={`http://localhost:4000/employees/UpdateEmployee?id=${id}`}
+              action={`https://smoggy-cheddar-banon.glitch.me/employees/UpdateEmployee?id=${id}`}
               method="post"
               encType="multipart/form-data"
             >

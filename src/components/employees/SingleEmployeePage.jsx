@@ -11,7 +11,7 @@ const SingleEmployee = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/employees/getSingleEmployee?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/employees/getSingleEmployee?id=${id}`
       );
       const data = await response.json();
       console.log(data);
@@ -40,7 +40,10 @@ const SingleEmployee = () => {
           </Link>
           <h2 className="section-title">{name}</h2>
           <div className="room">
-            <img src={`http://localhost:4000/images/${image}`} alt={name}></img>
+            <img
+              src={`https://smoggy-cheddar-banon.glitch.me/images/${image}`}
+              alt={name}
+            ></img>
             <div className="room-info">
               <p>
                 <span className="room-data">name :</span>

@@ -8,7 +8,7 @@ const Room = ({ _id, roomNo, roomType, rate, image }) => {
   const fetchBookingRoom = async (_id) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getBookedRoom?id=${_id}`
+        `https://smoggy-cheddar-banon.glitch.me/getBookedRoom?id=${_id}`
       );
       const data = await response.json();
       if (data.length >= 1) {
@@ -37,7 +37,7 @@ const Room = ({ _id, roomNo, roomType, rate, image }) => {
           )}
           <img
             onClick={() => handleUpdateDelete(_id)}
-            src={`http://localhost:4000/images/${image}`}
+            src={`https://smoggy-cheddar-banon.glitch.me/images/${image}`}
             alt={roomNo}
             style={{ cursor: "pointer" }}
           />

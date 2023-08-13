@@ -33,7 +33,7 @@ const BookRoom = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getSingleRoom?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${id}`
       );
       const data = await response.json();
       setRooms(data);
@@ -47,7 +47,7 @@ const BookRoom = () => {
   const fetchBookedRooms = async (roomId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getBookedRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getBookedRoom?id=${roomId}`
       );
       const data = await response.json();
       console.log("Booked Rooms:", data);
@@ -149,7 +149,7 @@ const BookRoom = () => {
           <h2 className="section-title">{roomNo}</h2>
           <div className="room">
             <img
-              src={`http://localhost:4000/images/${image}`}
+              src={`https://smoggy-cheddar-banon.glitch.me/images/${image}`}
               alt={roomNo}
             ></img>
             <div className="content-section">
@@ -175,7 +175,7 @@ const BookRoom = () => {
                 <h4>User Information</h4>
                 <hr style={{ marginTop: "-5px" }} />
                 <form
-                  action={`http://localhost:4000/BookRoom?id=${id}&personName=${personName}&email=${email}&contact=${contact}&arrivalDate=${arrivalDate}&arrivalTime=${arrivalTime}&departureDate=${departureDate}&departureTime=${departureTime}&children=${children}&adults=${adults}&userName=${user.name}`}
+                  action={`https://smoggy-cheddar-banon.glitch.me/BookRoom?id=${id}&personName=${personName}&email=${email}&contact=${contact}&arrivalDate=${arrivalDate}&arrivalTime=${arrivalTime}&departureDate=${departureDate}&departureTime=${departureTime}&children=${children}&adults=${adults}&userName=${user.name}`}
                   method="post"
                   encType="multipart/form-data"
                 >

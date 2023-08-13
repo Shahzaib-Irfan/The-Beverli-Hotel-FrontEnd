@@ -23,7 +23,7 @@ const DisplayUserBooking = ({
   const fetchRequiredRoom = async (roomId) => {
     try {
       let response = await axios.get(
-        `http://localhost:4000/getSingleRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${roomId}`
       );
       const data = response.data;
       data && setRequiredRoom(data[0]);
@@ -34,7 +34,9 @@ const DisplayUserBooking = ({
 
   const Pay = async (roomId) => {
     try {
-      let response = await axios.post(`http://localhost:4000/pay?id=${roomId}`);
+      let response = await axios.post(
+        `https://smoggy-cheddar-banon.glitch.me/pay?id=${roomId}`
+      );
     } catch (err) {
       console.log(err);
     }
@@ -51,7 +53,7 @@ const DisplayUserBooking = ({
           <div className="room-box">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
                 alt={requiredRoom.roomNo}
               />
             </div>
@@ -101,7 +103,7 @@ const DisplayUserBooking = ({
           <div className="room-box">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
                 alt={requiredRoom.roomNo}
               />
             </div>

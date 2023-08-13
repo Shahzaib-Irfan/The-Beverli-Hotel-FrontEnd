@@ -13,7 +13,7 @@ const UpdateRoom = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getSingleRoom?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${id}`
       );
       const data = await response.json();
       setRooms(data);
@@ -38,7 +38,7 @@ const UpdateRoom = () => {
           </article>
           <article className="form-article">
             <form
-              action={`http://localhost:4000/UpdateRoom?id=${id}`}
+              action={`https://smoggy-cheddar-banon.glitch.me/UpdateRoom?id=${id}`}
               method="post"
               encType="multipart/form-data"
             >

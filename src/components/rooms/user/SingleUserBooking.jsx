@@ -20,7 +20,7 @@ const SingleUserBooking = () => {
   const fetchRequiredRoom = async (roomId) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getSingleRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${roomId}`
       );
       console.log(response);
       const data = await response.json();
@@ -65,7 +65,11 @@ const SingleUserBooking = () => {
           <h2 className="section-title">{roomNo}</h2>
           <div className="room">
             <img
-              src={image ? `http://localhost:4000/images/${image}` : ""}
+              src={
+                image
+                  ? `https://smoggy-cheddar-banon.glitch.me/images/${image}`
+                  : ""
+              }
               alt={roomNo}
             ></img>
             <div className="room-info">

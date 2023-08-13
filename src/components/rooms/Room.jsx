@@ -12,7 +12,7 @@ const Room = ({ _id }) => {
   const fetchRequiredRoom = async (roomId) => {
     try {
       let response = await axios.get(
-        `http://localhost:4000/getSingleRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${roomId}`
       );
       const data = response.data;
       data && setRequiredRoom(data[0]);
@@ -28,7 +28,7 @@ const Room = ({ _id }) => {
     <Wrapper>
       <div className="container">
         <img
-          src={`http://localhost:4000/images/${requiredRoom.image}`}
+          src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
           alt={requiredRoom.roomNo}
         />
         {user ? (

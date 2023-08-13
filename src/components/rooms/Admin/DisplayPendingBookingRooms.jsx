@@ -22,7 +22,7 @@ const DisplayPendingBookingRooms = ({
     try {
       const { roomNo } = requiredRoom;
       let response = await axios.put(
-        `http://localhost:4000/approvebooking?id=${_id}&mode=${mode}&email=${email}&name=${name}&arrivalDate=${arrivalDate}&arrivalTime=${arrivalTime}&departureDate=${departureDate}&departureTime=${departureTime}&roomNo=${roomNo}`
+        `https://smoggy-cheddar-banon.glitch.me/approvebooking?id=${_id}&mode=${mode}&email=${email}&name=${name}&arrivalDate=${arrivalDate}&arrivalTime=${arrivalTime}&departureDate=${departureDate}&departureTime=${departureTime}&roomNo=${roomNo}`
       );
     } catch (err) {
       console.log(err);
@@ -31,7 +31,7 @@ const DisplayPendingBookingRooms = ({
   const fetchRequiredRoom = async (roomId) => {
     try {
       let response = await axios.get(
-        `http://localhost:4000/getSingleRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${roomId}`
       );
       const data = response.data;
       data && setRequiredRoom(data[0]);
@@ -49,7 +49,7 @@ const DisplayPendingBookingRooms = ({
         <RoomWrapper>
           <div className="room-box">
             <img
-              src={`http://localhost:4000/images/${requiredRoom.image}`}
+              src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
               alt={requiredRoom.roomNo}
               style={{ cursor: "pointer" }}
             />

@@ -15,7 +15,7 @@ const AddRoom = () => {
         </article>
         <article className="form-article">
           <form
-            action="http://localhost:4000/AddRoom"
+            action="https://smoggy-cheddar-banon.glitch.me/AddRoom"
             method="post"
             encType="multipart/form-data"
           >

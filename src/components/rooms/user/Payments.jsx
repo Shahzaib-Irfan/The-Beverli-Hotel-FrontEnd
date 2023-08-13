@@ -23,7 +23,7 @@ const DisplayUserPayments = ({
   const fetchRequiredRoom = async (roomId) => {
     try {
       let response = await axios.get(
-        `http://localhost:4000/getSingleRoom?id=${roomId}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${roomId}`
       );
       const data = response.data;
       data && setRequiredRoom(data[0]);
@@ -43,7 +43,7 @@ const DisplayUserPayments = ({
           <div className="room-box">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
                 alt={requiredRoom.roomNo}
               />
             </div>
@@ -78,7 +78,7 @@ const DisplayUserPayments = ({
             </div>
             <div className="interactions">
               <form
-                action={`http://localhost:4000/pay?id=${_id}&roomId=${roomId}&arrivalDate=${arrivalDate}&departureDate=${departureDate}`}
+                action={`https://smoggy-cheddar-banon.glitch.me/pay?id=${_id}&roomId=${roomId}&arrivalDate=${arrivalDate}&departureDate=${departureDate}`}
                 method="post"
               >
                 <button
@@ -102,7 +102,7 @@ const DisplayUserPayments = ({
           <div className="room-box">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
                 alt={requiredRoom.roomNo}
               />
             </div>
@@ -137,7 +137,7 @@ const DisplayUserPayments = ({
             </div>
             <div className="interactions">
               <form
-                action={`http://localhost:4000/pay?id=${_id}&roomId=${roomId}&arrivalDate=${arrivalDate}&departureDate=${departureDate}`}
+                action={`https://smoggy-cheddar-banon.glitch.me/pay?id=${_id}&roomId=${roomId}&arrivalDate=${arrivalDate}&departureDate=${departureDate}`}
                 method="post"
               >
                 <button

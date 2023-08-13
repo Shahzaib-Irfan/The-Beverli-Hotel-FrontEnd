@@ -10,7 +10,7 @@ const ContactUs = () => {
       <ReviewWrapper>
         <center>
           <form
-            action={`http://localhost:4000/contactus/addquestion`}
+            action={`https://smoggy-cheddar-banon.glitch.me/contactus/addquestion`}
             method="post"
           >
             <div className="center-box">

@@ -18,7 +18,7 @@ const DisplayEmployee = ({
         <div className="room-box">
           <img
             onClick={() => handleUpdateDelete(_id)}
-            src={`http://localhost:4000/images/${image}`}
+            src={`https://smoggy-cheddar-banon.glitch.me/images/${image}`}
             alt={name}
             style={{ cursor: "pointer" }}
           />

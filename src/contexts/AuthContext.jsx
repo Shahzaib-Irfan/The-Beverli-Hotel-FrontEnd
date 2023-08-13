@@ -17,7 +17,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/userbookings/getBookings?userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/userbookings/getBookings?userName=${user.name}`
       );
       const data = response.data;
       setUserBookings(data);
@@ -32,7 +32,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/payments/getPayments?userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/payments/getPayments?userName=${user.name}`
       );
       const data = response.data;
       setReamainingPayments(data);
@@ -47,7 +47,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/userbookings/getSingleBooking?id=${id}&userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/userbookings/getSingleBooking?id=${id}&userName=${user.name}`
       );
       const data = response.data;
       setUserBookings(data);
@@ -62,7 +62,7 @@ const AuthContext = ({ children }) => {
   const fetchDataForAddingReview = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/userbookings/getBookingsHistory?userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/userbookings/getBookingsHistory?userName=${user.name}`
       );
       const data = await response.data;
       setUserBookingHistory(data);
@@ -75,7 +75,7 @@ const AuthContext = ({ children }) => {
     for (const booking of userBookingsHistory) {
       const { _id, userName } = booking;
       const response = await axios.get(
-        `http://localhost:4000/userbookings/getSingleBookings?id=${_id}&userName=${userName}`
+        `https://smoggy-cheddar-banon.glitch.me/userbookings/getSingleBookings?id=${_id}&userName=${userName}`
       );
       const data = response.data;
       if (data.length === 0) {
@@ -85,7 +85,7 @@ const AuthContext = ({ children }) => {
         const dataReview = await responseReview.data;
         if (dataReview.length === 0) {
           axios.post(
-            `http://localhost:4000/reviews/addreview?bookingId=${_id}&userName=${userName}`
+            `https://smoggy-cheddar-banon.glitch.me/reviews/addreview?bookingId=${_id}&userName=${userName}`
           );
         }
       }
@@ -96,7 +96,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/reviews/getreviews?userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/reviews/getreviews?userName=${user.name}`
       );
       const data = response.data;
       setReviews(data);
@@ -111,7 +111,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/reviews/getAllReviews`
+        `https://smoggy-cheddar-banon.glitch.me/reviews/getAllReviews`
       );
       const data = response.data;
       setReviews(data);
@@ -126,7 +126,7 @@ const AuthContext = ({ children }) => {
     try {
       setLoading(true);
       const response = await axios.get(
-        `http://localhost:4000/reviews/getsinglereview?id=${id}&userName=${user.name}`
+        `https://smoggy-cheddar-banon.glitch.me/reviews/getsinglereview?id=${id}&userName=${user.name}`
       );
       const data = response.data;
       data.length === 1 && setReviews(data[0]);

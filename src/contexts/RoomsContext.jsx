@@ -6,7 +6,7 @@ const RoomsContextProvider = createContext();
 const RoomsContext = ({ children }) => {
   //const navigate = useNavigate();
   const [rooms, setRooms] = useState([]);
-    const [featured, setFeatured] = useState([]);
+  const [featured, setFeatured] = useState([]);
   const [pendingBookings, setPendingBookings] = useState([]);
   const [approvedBookings, setApprovedBookings] = useState([]);
   const [bookedRooms, setBookedRooms] = useState([]); // this state is for the rooms which is booked and is used to check overlapping for that new room bookings
@@ -16,7 +16,9 @@ const RoomsContext = ({ children }) => {
   const fetchRooms = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:4000/getRooms");
+      const response = await axios.get(
+        "https://smoggy-cheddar-banon.glitch.me/getRooms"
+      );
       const data = await response.data;
       setRooms(data);
       setLoading(false);
@@ -29,7 +31,9 @@ const RoomsContext = ({ children }) => {
   const fetchFeaturedRooms = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:4000/featured");
+      const response = await axios.get(
+        "https://smoggy-cheddar-banon.glitch.me/featured"
+      );
       const data = await response.data;
       setFeatured(data);
       setLoading(false);
@@ -42,7 +46,7 @@ const RoomsContext = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:4000/getPendingBookings"
+        "https://smoggy-cheddar-banon.glitch.me/getPendingBookings"
       );
       const data = await response.data;
       console.log(data);
@@ -57,7 +61,7 @@ const RoomsContext = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:4000/getApprovedBookings"
+        "https://smoggy-cheddar-banon.glitch.me/getApprovedBookings"
       );
       const data = await response.data;
       setApprovedBookings(data);
@@ -72,7 +76,7 @@ const RoomsContext = ({ children }) => {
       console.log("id", id);
       setLoading(true);
       const response = await fetch(
-        `http://localhost:4000/getSingleApprovedBooking?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleApprovedBooking?id=${id}`
       );
       const data = await response.json();
       setApprovedBookings(data);
@@ -98,7 +102,7 @@ const RoomsContext = ({ children }) => {
     } else if (mode === "Delete") {
       try {
         const response = await axios.get(
-          `http://localhost:4000/deleteRoom?id=${id}`
+          `https://smoggy-cheddar-banon.glitch.me/deleteRoom?id=${id}`
         );
       } catch (error) {
         console.error("Error deleting room:", error);
@@ -127,7 +131,7 @@ const RoomsContext = ({ children }) => {
         bookedRooms,
         setBookedRooms,
         featured,
-        fetchFeaturedRooms
+        fetchFeaturedRooms,
       }}
     >
       {children}

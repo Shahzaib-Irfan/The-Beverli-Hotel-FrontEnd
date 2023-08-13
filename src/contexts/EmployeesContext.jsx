@@ -12,7 +12,7 @@ const EmployeesContext = ({ children }) => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:4000/employees/getemployees"
+        "https://smoggy-cheddar-banon.glitch.me/employees/getemployees"
       );
       const data = await response.data;
       console.log(data);
@@ -35,7 +35,7 @@ const EmployeesContext = ({ children }) => {
     } else if (mode === "Delete") {
       try {
         const response = await axios.get(
-          `http://localhost:4000/employees/deleteemployee?id=${id}`
+          `https://smoggy-cheddar-banon.glitch.me/employees/deleteemployee?id=${id}`
         );
       } catch (error) {
         console.error("Error deleting room:", error);

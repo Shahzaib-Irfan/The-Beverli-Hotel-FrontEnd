@@ -10,7 +10,7 @@ const SingleRoom = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4000/getSingleRoom?id=${id}`
+        `https://smoggy-cheddar-banon.glitch.me/getSingleRoom?id=${id}`
       );
       const data = await response.json();
       console.log(data);
@@ -42,7 +42,7 @@ const SingleRoom = () => {
           <h2 className="section-title">{roomNo}</h2>
           <div className="room">
             <img
-              src={`http://localhost:4000/images/${image}`}
+              src={`https://smoggy-cheddar-banon.glitch.me/images/${image}`}
               alt={roomNo}
             ></img>
             <div className="room-info">

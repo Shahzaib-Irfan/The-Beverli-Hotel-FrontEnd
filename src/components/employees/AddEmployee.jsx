@@ -14,7 +14,7 @@ const AddEmployee = () => {
         </article>
         <article className="form-article">
           <form
-            action="http://localhost:4000/employees/addemployee"
+            action="https://smoggy-cheddar-banon.glitch.me/employees/addemployee"
             method="post"
             encType="multipart/form-data"
           >

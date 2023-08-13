@@ -17,7 +17,7 @@ const PaymentsPage = () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `http://localhost:4000/payments/getAllPayments`
+          `https://smoggy-cheddar-banon.glitch.me/payments/getAllPayments`
         );
         const data = response.data;
         console.log(data);
