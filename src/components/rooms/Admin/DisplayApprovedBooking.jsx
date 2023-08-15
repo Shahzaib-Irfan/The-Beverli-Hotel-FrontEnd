@@ -43,7 +43,7 @@ const DisplayApprovedBooking = ({
           <div className="room-box">
             <div className="image-wrapper">
               <img
-                src={`http://localhost:4000/images/${requiredRoom.image}`}
+                src={`https://smoggy-cheddar-banon.glitch.me/images/${requiredRoom.image}`}
                 alt={requiredRoom.roomNo}
               />
             </div>
